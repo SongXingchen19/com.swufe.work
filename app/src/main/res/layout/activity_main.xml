@@ -16,9 +16,9 @@
         android:layout_height="60dp"
         android:gravity="center"
         android:lineSpacingExtra="27dp"
-        android:text="TimeSet"
+        android:text="---专注时间设置---"
         android:textColor="#F87461"
-        android:textSize="40sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         />
 
@@ -33,7 +33,7 @@
         android:id="@+id/showdailog"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="140dp"
         android:textSize="22sp"
         android:textColor="#ffffff"
         android:background="@drawable/button_bg"/>
@@ -67,6 +67,7 @@
         android:textColor="#333333"
         android:textSize="15sp"
         android:hint="@string/start_time"
+        android:layout_marginTop="10dp"
         />
 
     <TextView
@@ -86,7 +87,7 @@
         android:text="时间选择"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:textSize="22sp"
         android:textColor="#ffffff"
         android:background="@drawable/button_bg"/>
