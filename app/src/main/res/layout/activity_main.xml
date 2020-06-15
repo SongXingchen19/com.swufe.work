@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="30dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="30dp"
+    android:background="@color/colorPrimary"
+    tools:context="com.swufe.comswufework.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:lineSpacingExtra="27dp"
+        android:text="TimeSet"
+        android:textColor="#F87461"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLine"
+        />
+
+    <Button
+        android:text="日期选择"
+        android:id="@+id/showdailog"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="150dp"
+        android:textSize="22sp"
+        android:textColor="#ffffff"
+        android:background="@drawable/button_bg"/>
+
+
+
+    <Button
+        android:id="@+id/showdailogTwo"
+        android:text="日期选择-双"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:textSize="22sp"
+        android:textColor="#ffffff"
+        android:background="@drawable/button_bg"
+         />
+    <Button
+        android:id="@+id/time"
+        android:text="时间选择"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:textSize="22sp"
+        android:textColor="#ffffff"
+        android:background="@drawable/button_bg"/>
+
+</LinearLayout>

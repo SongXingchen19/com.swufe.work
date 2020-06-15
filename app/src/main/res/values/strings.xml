@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">com.swufe.work</string>
+    <string name="time">Time</string>
+    <string name="calender">Calender</string>
+</resources>
