@@ -60,12 +60,24 @@
          />
 
     <TextView
-        android:id="@+id/day_double"
+        android:id="@+id/day_double1"
         android:layout_width="206dp"
         android:layout_height="40dp"
         android:lineSpacingExtra="27dp"
         android:textColor="#333333"
         android:textSize="15sp"
+        android:hint="@string/start_time"
+        />
+
+    <TextView
+        android:id="@+id/day_double2"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:lineSpacingExtra="27dp"
+        android:textColor="#333333"
+        android:textSize="15sp"
+        android:hint="@string/end_time"
+        android:layout_marginTop="13dp"
         />
 
 

@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.nfc.Tag;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         showdailogTwo.setOnClickListener(this);
         showdailog.setOnClickListener(this);
         calendar = Calendar.getInstance();
+
+
     }
 
     @Override
@@ -75,13 +79,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(TAG, time);
                 //day.setText(time);
 
-                //将时间保存到SP里
-                SharedPreferences sharedPreferences = getSharedPreferences("time", Activity.MODE_PRIVATE);
+                //将日期保存到SP里
+                SharedPreferences sharedPreferences = getSharedPreferences("date", Activity.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("time_you_pick",time);
+                editor.putString("date_you_pick",time);
                 editor.commit();
-                Log.i(TAG, "时间已保存到SharedPreferences");
+                Log.i(TAG, "日期已保存到SharedPreferences");
 
+                //显示所设定日期
+                TextView date;
+                date = (TextView)findViewById(R.id.day);
+                date.setText(time);
 
             }
         },
@@ -109,8 +117,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String st = "" + startTime.getYear() + month + startTime.getDayOfMonth();
                 int month1 = endTime.getMonth() + 1;
                 String et = "" + endTime.getYear() + month1 + endTime.getDayOfMonth();
+
+                //将日期保存到SP里
+                SharedPreferences sharedPreferences2 = getSharedPreferences("from_start_to_end",Activity.MODE_PRIVATE);
+                SharedPreferences.Editor editor2 = sharedPreferences2.edit();
+                editor2.putString("start_time",st);
+                editor2.putString("end_time",et);
+                editor2.commit();
+                Log.i(TAG, "开始、结束日期已保存到SharedPreferences");
+
+                //显示所设定开始、结束日期
+                TextView St;
+                TextView Et;
+                St = (TextView)findViewById(R.id.day_double1);
+                Et = (TextView)findViewById(R.id.day_double2);
+                St.setText(st);
+                Et.setText(et);
+
             }
         });
+
+
         builder.setNegativeButton("取消", null);
         AlertDialog dialog = builder.create();
         dialog.show();
@@ -124,6 +151,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 Log.d(TAG, Integer.toString(hourOfDay));
                 Log.d(TAG, Integer.toString(minute));
+                String hour1 = Integer.toString(hourOfDay);
+                String min1 = Integer.toString(minute);
+                String time1 = hour1+":"+min1;
+
+                //将日期保存到SP里
+                SharedPreferences sharedPreferences3 = getSharedPreferences("time",Activity.MODE_PRIVATE);
+                SharedPreferences.Editor editor3 = sharedPreferences3.edit();
+                editor3.putString("time_you_pick",time1);
+                editor3.commit();
+                Log.i(TAG, "时间已保存到SharedPreferences");
+
+                //显示所设定时间
+                TextView time;
+                time = (TextView)findViewById(R.id.day_time);
+                time.setText(time1);
+
             }
         }, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true);
         timePickerDialog.show();
