@@ -1,9 +1,12 @@
 package com.swufe.comswufework;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TimePickerDialog timePickerDialog;
 
     private Calendar calendar;
+    private final String TAG = "test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +72,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 //monthOfYear 得到的月份会减1所以我们要加1
                 String time = String.valueOf(year) + "　" + String.valueOf(monthOfYear + 1) + "  " + Integer.toString(dayOfMonth);
-                Log.d("测试", time);
+                Log.d(TAG, time);
+                //day.setText(time);
+
+                //将时间保存到SP里
+                SharedPreferences sharedPreferences = getSharedPreferences("time", Activity.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("time_you_pick",time);
+                editor.commit();
+                Log.i(TAG, "时间已保存到SharedPreferences");
+
+
             }
         },
                 calendar.get(Calendar.YEAR),
@@ -108,8 +122,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                Log.d("测试", Integer.toString(hourOfDay));
-                Log.d("测试", Integer.toString(minute));
+                Log.d(TAG, Integer.toString(hourOfDay));
+                Log.d(TAG, Integer.toString(minute));
             }
         }, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true);
         timePickerDialog.show();

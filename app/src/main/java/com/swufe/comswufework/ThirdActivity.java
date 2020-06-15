@@ -25,7 +25,7 @@ public class ThirdActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_third2);
+        setContentView(R.layout.activity_third);
 
         //日历初始化
         calendar = Calendar.getInstance();
