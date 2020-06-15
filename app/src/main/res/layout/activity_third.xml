@@ -8,6 +8,19 @@
     android:orientation="vertical"
     android:id="@+id/linearLayout"
     >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:lineSpacingExtra="27dp"
+        android:text="---专注时间设置（界面2）---"
+        android:textColor="#7CB63A"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +35,7 @@
             android:text="@string/time"
             android:textSize="22sp"
             android:textColor="#ffffff"
-            android:background="@drawable/button_bg"/>
+            android:background="@drawable/button_bg2"/>
 
         <Button
             android:id="@+id/btCalender"
@@ -32,7 +45,7 @@
             android:text="@string/calender"
             android:textSize="22sp"
             android:textColor="#ffffff"
-            android:background="@drawable/button_bg"/>
+            android:background="@drawable/button_bg2"/>
     </LinearLayout>
 
 
