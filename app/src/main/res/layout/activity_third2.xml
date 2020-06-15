@@ -13,7 +13,7 @@
         android:layout_height="60dp"
         android:gravity="center"
         android:lineSpacingExtra="27dp"
-        android:text="TimeSet"
+        android:text="TimeSet(No.3)"
         android:textColor="#F87461"
         android:textSize="40sp"
         android:textStyle="bold" />
