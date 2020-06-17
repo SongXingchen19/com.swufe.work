@@ -50,6 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         calendar = Calendar.getInstance();
 
 
+
+        //跳转到计时页面
+        Button button = (Button) findViewById(R.id.time);
+
     }
 
     @Override
@@ -62,7 +66,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 showDialogTwo();
                 break;
             case R.id.time:
-                showTime();
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,SecondActivity.class);
+                startActivity(intent);
                 break;
         }
     }
@@ -145,7 +151,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
-    private void showTime() {
+
+    //修改前，用于点出TimePickerDialog
+    /*private void showTime() {
         timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -171,5 +179,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true);
         timePickerDialog.show();
         timePickerDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-    }
+    }*/
 }

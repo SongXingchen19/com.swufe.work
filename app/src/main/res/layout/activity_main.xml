@@ -92,12 +92,6 @@
         android:textColor="#ffffff"
         android:background="@drawable/button_bg"/>
 
-    <TextView
-        android:id="@+id/day_time"
-        android:layout_width="206dp"
-        android:layout_height="39dp"
-        android:lineSpacingExtra="27dp"
-        android:textColor="#333333"
-        android:textSize="15sp"/>
+
 
 </LinearLayout>
