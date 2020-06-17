@@ -84,7 +84,7 @@
 
     <Button
         android:id="@+id/time"
-        android:text="时间选择"
+        android:text="专注计时"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
